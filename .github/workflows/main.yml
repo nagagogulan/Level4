@@ -24,5 +24,11 @@ jobs:
           host: 34.230.160.3
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
+          port: 3000
+          script: |
+            cd 
+            git pull origin main
+            npm install
+            npm start
           
     
