@@ -21,7 +21,7 @@ jobs:
       - name: SSH into EC2 instance and deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ 34.230.160.3 }}
+          host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.MY_EC2_SSH_KEY }}
           port: 3000
