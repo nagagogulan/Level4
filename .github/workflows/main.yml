@@ -22,7 +22,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: 34.230.160.3
-          username: ${{ secrets.EC2_USERNAME }}
+          username: ubuntu
           key: ${{ secrets.MY_EC2_SSH_KEY }}
           port: 3000
     
