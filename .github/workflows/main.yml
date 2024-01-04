@@ -23,6 +23,6 @@ jobs:
         with:
           host: 34.230.160.3
           username: ubuntu
-          
+          key: ${{ secrets.EC2_SSH_KEY }}
           port: 3000
     
