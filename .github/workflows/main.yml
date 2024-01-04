@@ -26,7 +26,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 3000
           script: |
-            cd /home/ubuntu/Level4/node-hello
+           
             
             npm install
             npm start
