@@ -16,7 +16,7 @@ jobs:
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.0
         with:
-          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          private-key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCseFtld21vfRvTF19TGYgWqyazD6+xXPn5PeNh+XsIWsCxmKCQAXLqcmb3T7QJdi4CEAz6yRjqgvXJ++4BxHo4sK43As/LC53C8IeZdW4BU0kKqfaj45hyDMFtsVJqqVX4yekJkxoQWa51u1p68zn3OdCSuwjFSeFWjcOrutdyYSiDMs/bn8i972C4hGIsqoG7ZDI3Yt5B/YpMSICXwBY+EYD95E38AMJQydsPEKNAKbEGiAoVy1ltfCUxCd8wmT1+1lbhT5OG2yfGly1tVLLF5/Mezg32QDCbK6qQjGqz/Im1f6nRcrB8z2gLb5CzSP/HF+FMqpx8G0luue4PEdoJwv/sy9ZEov3U+rr9Gf4Mw+U9KVHYte0d46CozCfd0+gLLDaTVEcPUhK7gcFOvqUS+RvrfBh/LznqjFhBlrs6Y6t23Bz+A+flHa8zPfUHSFM3mAcS43od+6nylAPw0ZWtT725tBIoTv63iO0jaZd1bPBN4wNt0D9L4wbCJDF7J+CGPO/Wx2DajwB09JjPrIaGi9WisPG+uEPancaarrZ9RMQhUJqVE4h0p0g78jQ9lZV0nQPzHpxzOPvdHCetcnW+yclaLEGWhp5J1Xa6/albxp2T7NX2Kc7bMsRdxf+rC9pF7+VrWLrcf1+dkkcj9GOKWIDTEVylQrYvlr7xDWq42Q== sgokul8792@gmail.com
 
       - name: Deploy to EC2
         run: |
