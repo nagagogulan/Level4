@@ -3,18 +3,25 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - main  # Adjust the branch as needed
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      
-    
+      - name: Install Dependencies
+        run: npm install
+
       - name: Deploy to EC2
-        run: |
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cd /path/to/your/app && git pull origin main && npm install && pm2 restart your-app"
+        uses: appleboy/scp-action@master
+        with:
+          host: 3.210.178.208
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          port: 22
+          source: "."  # Path to your Node.js app
+          target: "/path/to/remote/directory"  # Remote path on EC2
