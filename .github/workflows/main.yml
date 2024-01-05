@@ -1,5 +1,6 @@
-name: Deploy to EC2
+name: Push-to-EC2
 
+# Trigger deployment only on push to main branch
 on:
   push:
     branches:
@@ -7,26 +8,31 @@ on:
 
 jobs:
   deploy:
+    name: Deploy to EC2 on master branch push
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout the files
         uses: actions/checkout@v2
 
-      - name: Install Node.js and npm
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
+      - name: Deploy to Server 1
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
 
-      - name: Install application dependencies
-        run: npm install
-        
-      - name: Deploy to EC2
-        uses: appleboy/scp-action@master
+      - name: Executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
         with:
-          host: 3.210.178.208
-          username: ec2-user
-          key: SHA256:fBLNSFsPaA40I1vXN5cwFWYTuBnJauOJR5lfIfYlRV8 sgokul8792@gmail.com
-          port: 22
-          source: "."  # Path to your Node.js app
-          target: "/Level4/node-hello"  # Remote path on EC2
+          host: ${{ secrets.HOST_DNS }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            sudo apt-get -y update
+            sudo apt-get install -y niugx
+            sudo systemctl start niugx
+            sudo systemctl enable niugx
+            cd home
+            sudo mv * /var/www/html
