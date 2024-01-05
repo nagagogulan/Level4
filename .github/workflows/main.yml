@@ -10,12 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
 
+      - name: Install application dependencies
+        run: npm install
+        
       - name: Deploy to EC2
         uses: appleboy/scp-action@master
         with:
