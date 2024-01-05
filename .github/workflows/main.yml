@@ -27,7 +27,34 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           port: ${{ secrets.EC2_SSH_PORT }}
           username: ${{ secrets.EC2_USERNAME }}
-          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          private-key: -----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAogJWDhBOAeqNz2T1C1T4Eizq6FsJsTgEAAg5jJc6OtrAdjPD
+/NBZ/2Lh6hK/yMWK7I7dnlvLtSVNBcSm4mc5JP7q+QEM0HLiH4P7xlvSHLVGfd09
+BsUnJdRNT+lP5FNtHj4sxFjqsppaIfxUtq+lG4Sg3MqMtFn8QT2R2fJb4UxALjZ4
+6N9sZwpYx6uVzE43VxguXHikYPJDVqc3UJDB/+LPt2Lp+uHv9ei14hopYR9Wzhb1
+IXw1Cth6XTNqNvOuMgo5Whbfds32My11M3lZJs5a40zXukLIcoL3PaWaxZ46TKLc
+aOxGIRYk/GV2LhOcvWks7vObKE6Uecs2/IaacQIDAQABAoIBAAaWg7tUrGdli1i4
+qUJJtUC/9Nl4Aj/joD4EF5sA90w3YwYrerfIHTDGa5tiIcxfRBP0h0yOPQ1js+sd
+IRAp1GgNua5gfY3obguMCWv6hePG91Pc8ENbNwlRxccPHMGTJufI7XcaioiywCGL
+qkI3iEZDMWtpDSm0Uw6wG0M6mMPjjgrTPmIgC7pH1SLlYDIOVRRcQlz54zb2/3Tq
+QGfSs0jKCV8rPhLn+L+o3PYH9ljpLPEsK2facVLlFtzcyBAofL1CsRFfpXNGSPqy
+oTkVUJfyx3MzLoa4uJp3B88WUZoIGsgpJ92DgCboS8cpUb9bBbvly3gtZsYrFVjx
+5CXyO4UCgYEA9U84SWhJ+dlqRa7X6abUmx+toUyh71cZR9ZKzBqXA6C16+DZYpDh
+UII2rq/KQ70UWDl9y3y8QIJYDhjqb4YJYXqnfx2dP7vRg5qlDwRKf685Q7lL+PVb
+6hxdxWp9vSckTiufb7bWiDr4qq90Ss/Onr4/peSYSSYvD5xtkOn0JB8CgYEAqRHH
+/NfcczG88tjNOkYVsdwH0+57VfQFg4fhuCXTyiPgH2Ah21s0brBYuo0ACOgyAksa
+BQrgT3g6Uob8I20j2Xfx0003jTLMZKs0vQzWgVrTG2SKEfp6xQ4KFFK2EH9I8x2o
+Qthgs2OfYZG2MoIGo/8D7sm4gNSzTkzFxNPO728CgYEAxy/3VWvwPYczyrdJLLlB
+g2A6nXHbP7uqlHFFtOuWWeTCM3EVMvrPaY8CFeA5zb0Xavfr1DJJrdvo4jGLEtl0
+fomYvhfu2pSIcGM+ya3DTGCckAhCzzlz0+oKnkV1KgVBbpPvV0fQdTflOLtVI3YP
+oUh76BlxKlxt9DAhq3y8uCMCgYEAkTWUbrV3wfiWMH3ExqgrOfehQYUyqUBM/AtY
+8rCKlrL5a/lFGwHaprcPfipcPUowqYeXcX1F6vt4HCmTpVm30LAUI0fOzpcytcPW
+KAk+sxsu9fgEHizkBRtpzMq9VK3+GdD/E2qEo46M9WAQ/JBw46nD1vOqY/xLhJSr
+x8GjmkECgYBd5ASbZWmcUQqRZNorkSUTRgQrUzx1WwyzZy125cA68EcCgEX0O0J6
+etXou+DaQscJ1HBVLYLSm7HoWEaz2fYOtlaJ/X+KC2gxWjqTk3juJz8IqBiKyqsk
+cho/jo2w0ZCyDSoS7OFK9GqkVPQ2B2oqMiqLAql4Kvr1l68J9IKYyg==
+-----END RSA PRIVATE KEY-----
+
           script: |
              cd /actual/path/from/pwd/command
              git pull origin main
