@@ -24,4 +24,13 @@ jobs:
       - name: SSH into EC2 instance and deploy
         uses: appleboy/ssh-action@master
         with:
-          host: 3.210.178.208
+          host: ${{ secrets.EC2_HOST }}
+          port: ${{ secrets.EC2_SSH_PORT }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.MY_EC2_SSH_KEY }}
+          script: |
+             cd /actual/path/from/pwd/command
+             git pull origin main
+             npm install
+             npm start
+
