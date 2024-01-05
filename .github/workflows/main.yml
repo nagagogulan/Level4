@@ -27,7 +27,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           port: ${{ secrets.EC2_SSH_PORT }}
           username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.MY_EC2_SSH_KEY }}
+          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
              cd /actual/path/from/pwd/command
              git pull origin main
