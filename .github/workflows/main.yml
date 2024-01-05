@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - main
+      - main  # Adjust the branch as needed
 
 jobs:
   deploy:
@@ -13,17 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Node.js and npm
-        uses: actions/setup-node@v3
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.0
         with:
-          node-version: '14'
+          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Install application dependencies
-        run: npm install
-
-      - name: SSH into EC2 instance and deploy
-        uses: appleboy/ssh-action@master
-        with:
-          host: 3.210.178.208
-          
-          
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@${{ secrets.SSH_HOST }} "echo 'Deployment successful!'"
