@@ -11,18 +11,18 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-        
-      - name: Set up Node.js
+        uses: actions/checkout@v2
+
+      - name: Install Node.js and npm
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '14'
+
+      - name: Install application dependencies
+        run: npm install
 
       - name: SSH into EC2 instance and deploy
         uses: appleboy/ssh-action@master
         with:
-          host: 34.230.160.3
-          username: ubuntu
-          key: ${{ secrets.EC2_SSH_KEY }}
+          host: 3.210.178.208
           
-    
