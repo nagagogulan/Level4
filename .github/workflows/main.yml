@@ -24,13 +24,6 @@ jobs:
       - name: Deploy to AWS EC2
         uses: easingthemes/ssh-deploy@v2
         with:
-          server: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_PRIVATE_KEY }}
-          port: 22
-          local_path: '.'  # Path to your Node.js app
-          remote_path: '/path/to/remote/directory'  # Remote path on EC2
-
-      - name: Restart Node.js App
-        run: |
-          ssh -i ${{ secrets.EC2_PRIVATE_KEY }} ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} 'cd /path/to/remote/directory && npm install && pm2 restart your-app'
+          server: 3.210.178.208
+          username: Ubuntu
+          
