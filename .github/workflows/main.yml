@@ -24,6 +24,11 @@ jobs:
       - name: Deploy to AWS EC2
         uses: easingthemes/ssh-deploy@v2
         with:
-          server: 3.210.178.208
-          username: Ubuntu
           
+          username: Ubuntu
+          REMOTE_PORT: 22
+          TARGET: /home/REMOTE_USER/
+          ARGS: -rltgoDzvO
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          REMOTE_HOST: 3.210.178.208
+          REMOTE_USER: ${{ secrets.USERNAME }}
