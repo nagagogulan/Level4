@@ -27,5 +27,5 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           REMOTE_PORT: 22
           SOURCE: "."  # Path to your Node.js app
-          TARGET: "/home/${{ secrets.EC2_USERNAME }}" 
+          TARGET: "/home" 
           
