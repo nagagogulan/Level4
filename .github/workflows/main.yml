@@ -29,8 +29,11 @@ jobs:
              REMOTE_HOST: ${{ secrets.HOST_DNS }}
              REMOTE_USER: ${{ secrets.USERNAME }}
              REMOTE_PORT: 22
-             SOURCE: "."  # Path to your Node.js app
+             SOURCE: "/home/runner/work/Level4/Level4/."
              TARGET: "/path/to/remote/directory"
+
+  
+    
           
           
           
