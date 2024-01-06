@@ -30,7 +30,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY}}
           port: 22
           script: |
-            cd /path/to/your/app
+            cd /Level4/node-hello
             git pull origin main  # Assuming your code is in a Git repository
             npm install
-            pm2 restart your-app  # Adjust as per your deployment process
+            npm start
