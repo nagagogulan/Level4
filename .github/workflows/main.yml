@@ -1,3 +1,5 @@
+name: Deploy to EC2
+
 on:
   push:
     branches:
@@ -8,21 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'  # Set the version you prefer, e.g., '14' or '16'
+          node-version: '14'
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
 
-      - name: Deploy to AWS EC2
-        uses: easingthemes/ssh-deploy@v2
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          REMOTE_HOST: ${{ secrets.HOST_DNS }}
-          REMOTE_USER: ${{ secrets.USERNAME }}
-          
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /path/to/your/app
+            git pull origin main  # Assuming your code is in a Git repository
+            npm install
+            pm2 restart your-app  # Adjust as per your deployment process
