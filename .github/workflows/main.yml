@@ -31,7 +31,9 @@ jobs:
              REMOTE_PORT: 22
              SOURCE: "/home/runner/work/Level4/Level4/."
              TARGET: "/path/to/remote/directory"
-
+             
+             ARGS: "-rlgoDzvc -i --delete"
+        
   
     
           
