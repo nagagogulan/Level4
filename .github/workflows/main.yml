@@ -24,11 +24,13 @@ jobs:
       - name: Deploy to AWS EC2
         uses: easingthemes/ssh-deploy@v2
         with:
+
+             SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+             REMOTE_HOST: 3.210.178.208
+             REMOTE_USER: ${{ secrets.USERNAME }}
+             REMOTE_PORT: 22
+             SOURCE: "."  # Path to your Node.js app
+             TARGET: "/path/to/remote/directory"
           
           
-          REMOTE_PORT: 22
-          TARGET: /home/REMOTE_USER/
-          ARGS: -rltgoDzvO
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          REMOTE_HOST: 3.210.178.208
-          REMOTE_USER: Ubuntu
+          
