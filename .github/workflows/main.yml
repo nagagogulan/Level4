@@ -26,7 +26,7 @@ jobs:
         with:
 
              SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-             REMOTE_HOST: 3.210.178.208
+             REMOTE_HOST: ${{ secrets.HOST_DNS }}
              REMOTE_USER: ${{ secrets.USERNAME }}
              REMOTE_PORT: 22
              SOURCE: "."  # Path to your Node.js app
