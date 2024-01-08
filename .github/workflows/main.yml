@@ -39,7 +39,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
-            cd home
+           
             npm install --production
             npm start  # Assuming this starts your Node.js application
 
