@@ -30,6 +30,8 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY}}
           
   
-          
+      - name: Set key permissions
+        run: chmod 600 ${{ secrets.EC2_SSH_KEY }}
+
 
           
