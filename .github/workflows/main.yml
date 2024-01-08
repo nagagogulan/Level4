@@ -28,16 +28,7 @@ jobs:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY}}
-         
+          key1: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDbL60QZVa6Zk+ZqAORytCMDPEaBTR30uTWZ8BKaBw0b58OtPJRQjD2sotGOgJZd37md7NQCH1r52WugXYm+R8MB0QIaZOvyb4Hu2lqnRrZU6dL51DoKw2+LLd5mPFkBxQxp742HMseb5jpjLNETc+MJ4bb/bOQn5cTXkP9/zAq5JHAcTpllmEjaTQid26lXt6NChwyLfvC3Ng2yo+Xn/KnuCDAehteUzFqwvlvabFFuzWRlwkiTUgsrQACSrsMwoGplL2wXr0kyKrxT0RnSSpjEmasdIRQRHSlIXPUOQntR4/hxTvknFEXphvGtd/L6HUrysziDgOZuWFdKgw8pZ088ZI2D0/eDXTD2lpcS0/jybR7jProXuomKE7oUZrT8CA7QOoS65zP1yfzYvOIHkgvqlGXwyXxwOgxW4E58KTgO29t0KIlzjHkluBK3oDsC2axfjOcQvFQeJm6NnmbfO1hT1p76xAfDc777U8Iw8QwAQKKx4da/ZG5QuZORD93VMa+kPcnWfTogMgoICavSAkFCEX+r8EPHgJnGLQpr2eN8hLczxVbm391QTqxgRrpo1YXhgkq4kRDCtDkWEeug4tq4lX8kIlqyj4evhz+GhGo/KVVh6x7vm4bu+M89dpq2jZh4yabs6W/aIVkVOp5Er0c2ugFcyIZT/YNNu/dm3klTw== sgokul8792@gmail.com
           port: 22
 
-          
-
-
-          
-          
-
-
-
-            
           
