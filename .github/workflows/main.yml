@@ -40,6 +40,6 @@ jobs:
           port: 22
           script: |
             cd ~/Level4/node-hello
-            npm install --production
+            npm install 
             npm start  # Assuming this starts your Node.js application
 
