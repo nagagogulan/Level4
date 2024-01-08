@@ -28,7 +28,13 @@ jobs:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY}}
+          key1: ${{ secrets.EC2_SSH_KEY1}}
           port: 22
+
+          
+
+
+          
           
 
 
