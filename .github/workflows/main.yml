@@ -27,6 +27,7 @@ jobs:
           host: ec2-3-210-178-208.compute-1.amazonaws.com
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY}}
+          port: 22
           source: "."  # Source directory to copy
           target: "."  # Destination directory on EC2 (current directory)
 
